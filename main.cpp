@@ -3,64 +3,13 @@
 #include <exception>
 #include <vector>
 #include <limits>
+#include "hockeyplayer.h"
 
 
 //  struct Employee{
 //     operator() 
 //  };
 
-class HockeyPlayer{
-public:    
-
-    //constructor = ange paramtrar som är mandatory för en Player
-    // OPK om ni vill
-    // HockeyPlayer(std::string name, int age){
-    //     this->name = name;
-    //     this->age = age;
-    // }
-
-    //constructor = ange paramtrar som är mandatory för en Player
-    // Såsom man brukar = best practice
-    HockeyPlayer(std::string name, int age)
-        :name(name){
-            setAge(age);
-    }
-    
-    HockeyPlayer(std::string name, int age,std::string team, int jerseyNumber)
-        :HockeyPlayer(name,age){
-         this->team = team;   
-         this->jerseyNumber = jerseyNumber;   
-    }
-
-
-    std::string getName(){
-        return name;
-    }
-
-
-
-    void setAge(int age){
-        if(age <0){
-            throw std::invalid_argument("age less than 0, stupid");
-        }
-        this->age = age;
-    }
-    void setJerseyNumber(int jerseyNumber){
-        if(jerseyNumber <0){
-            throw std::invalid_argument("jerseyNumber less than 0, stupid");
-        }
-        this->jerseyNumber = jerseyNumber;
-    }
-    void setTeam(std::string team){
-        this->team = team;
-    }
-
-private:
-    std::string name;     
-    int age;
-    int jerseyNumber;     
-    std::string team;     
-};
 
 void addPlayer(std::vector<HockeyPlayer> &allPlayers){
     std::string namn;
