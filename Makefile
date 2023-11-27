@@ -1,5 +1,5 @@
 PROG = main.exe 
-SRC = main.cpp
+SRC = main.cpp hockeyplayer.cpp
 CFLAGS = -g -std=c++17
 LIBS = 
 CC=g++
